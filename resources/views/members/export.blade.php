@@ -1,0 +1,40 @@
+<table>
+    <thead>
+        <tr>
+            <th>id</th>
+            <th>Image</th>
+            <th>name</th>
+            <th>email</th>
+            <th>phone</th>
+            <th>city</th>
+            <th>faculty</th>
+            <th>year</th>
+            <th>department</th>
+            <th>section</th>
+            <th>position</th>
+            <th>committee</th>
+            <th>created_at</th>
+            <th>updated_at</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach($members as $key => $member)
+        <tr>
+            <td>{{++$key}}</td>
+            <td>{{asset($member['images'])}}</td>
+            <td>{{$member['name']}}</td>
+            <td>{{$member['email']}}</td>
+            <td>{{$member['phone']}}</td>
+            <td>{{$member['city']}}</td>
+            <td>{{$member['faculty']}}</td>
+            <td>{{$member['year']}}</td>
+            <td>{{$member['department']}}</td>
+            <td>{{$member['committee']['section']['name']}}</td>
+            <td>{{$member['position']['name']}}</td>
+            <td>{{$member['committee']['committee']['name']}}</td>
+            <td>{{$member['created_at']}}</td>
+            <td>{{$member['updated_at']}}</td>
+        </tr>
+    @endforeach
+    </tbody>
+</table>
